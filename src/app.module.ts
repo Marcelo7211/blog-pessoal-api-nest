@@ -2,7 +2,7 @@
 
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Postagem } from './Postagem/Entities/postagem.entity';
+import { Postagem } from './Postagem/entities/postagem.entity';
 
 @Module({
   imports: [
