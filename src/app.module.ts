@@ -3,6 +3,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Postagem } from './Postagem/entities/postagem.entity';
+import { PostagemModule } from './Postagem/postagem.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { Postagem } from './Postagem/entities/postagem.entity';
       database: 'db_blog_pessoal',
       entities: [Postagem], //Indicar a pasta onde contem as entidades
       synchronize: true,
-    })
+    }),
+    PostagemModule //Registrando o Modulo de Postagem no app.Modulo
   ],
   controllers: [],
   providers: [],
