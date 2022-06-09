@@ -2,6 +2,7 @@
 
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Postagem } from './Postagem/Entities/postagem.entity';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'Admin357/',
       database: 'db_blog_pessoal',
-      entities: [], //Indicar a pasta onde contem as entidades
+      entities: [Postagem], //Indicar a pasta onde contem as entidades
       synchronize: true,
     })
   ],
