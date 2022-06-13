@@ -1,7 +1,8 @@
 // Documentação https://docs.nestjs.com/techniques/database#repository-pattern
 //              https://typeorm.io/entities
 
-import { Column, Entity, PrimaryGeneratedColumn, Tree, UpdateDateColumn } from "typeorm"
+import { Tema } from "src/Tema/entities/tema.entity"
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, Tree, UpdateDateColumn } from "typeorm"
 
 
 @Entity()
@@ -18,4 +19,7 @@ export class Postagem {
 
     @UpdateDateColumn()
     data: Date
+
+    @ManyToOne(() => Tema, (tema) => tema.postagem)
+    tema: Tema //Documentação: https://typeorm.io/many-to-one-one-to-many-relations
 }
